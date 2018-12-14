@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home Page</title>
+  <title>Resume and Cover Letter Resume Tips</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,15 +15,36 @@
   <link href="./css/jcarousel.css" rel="stylesheet" />
   <link href="./css/flexslider.css" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
-
+  <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
   <style>
-  img {
-    width: 400px; /* You can set the dimensions to whatever you want */
-    height: 400px;
-    object-fit: cover;
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
   }
 
-  body, html {
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+/* Here */
+body, html {
   height: 90%;
 }
 
@@ -33,7 +54,7 @@
 
 .bg-image {
   /* The image used */
-  background-image: url("./Pictures/GettingAJob.jpg");
+  background-image: url("./Pictures/Checking.jpg");
 
   /* Add the blur effect */
   filter: blur(2px);
@@ -65,28 +86,16 @@
   padding: 20px;
   text-align: center;
 }
-
-.btn-space {
-  margin: 15px auto 0 auto;
-  display: block;
-}
-
-a:hover {
- text-decoration: none;
-}
-
   </style>
-
 </head>
 <body>
 
 <div class="bg-image"></div>
 <div class="bg-text">
-  <h2><p style="color:White;"><b>Tech Career Development Resources</b></p></h2>
-  <p>For current undergraduates and recent graduates</p>
+  <h2><p style="color:White;"><b>Resume & Cover Letter Resources</b></p></h2>
+  <p>Check out our recommended tips and resources for writing resumes and cover letters!</p>
 </div>
 </div>
-
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -96,10 +105,10 @@ a:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./Home.html"><p style="color:White;">Home</p></a></li>
+        <li><a href="./Home.html"><p style="color:White;">Home</p></a></li>
         <li><a href="./About.html"><p style="color:White;">About</p></a></li>
         <li><a href="./Careers.html"><p style="color:White;">Career and Internship Database</p></a></li>
         <li class="dropdown">
@@ -115,53 +124,44 @@ a:hover {
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;"> Resume and Cover Letter Resources
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
-          <li><a href="./Resume.html">Tips</a></li>
+          <li class="active"><a href="./Resume.html">Tips</a></li>
           <li><a href="./ResumeDB.html">Resume and Cover Letter Resource Database</a></li>
         </ul>
       </li>
 
       <li><a href="./Contact.html"><p style="color:White;">Contact Us</p></a></li>
-        <!-- <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;">Pages
-        <span class="caret"></span></a>
-         <ul class="dropdown-menu">
-          <li><a href="./Careers.html">Career & Internship Database</a></li>
-          <li><a href="./Interview.html">Interview Tips</a></li>
-          <li><a href="./Resume.html">Resume/ Cover Letter Tips</a></li>
-        </ul>
-      </li> -->
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3><b>Careers & Internships</b></h3>
-      <p>Tech Entry Level Positions and Internships from companies all over.</p>
+  <h2><b>Resume Tips</b></h2>
+  <a href="#demo" class="btn btn-primary" data-toggle="collapse">Click to View</a>
+  <div id="demo" class="collapse">
+    <i class="glyphicon glyphicon-check"></i> List experience by relevance and recency. <br>
 
-      <img src="./Pictures/Careers&Internships.jpg" class="img-responsive" alt="Careers_&_Internships">
-      <!-- <a class="btn btn-outline-primary btn-space" href="./Careers.html" role="button">
-      Click here!! </a> -->
-        <a href="./Careers.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
-    <div class="col-sm-4">
-      <h3><b>Interview Resources</b></h3>
-      <p>Ace your next interview with these killer resources!</p>
-      <img src="./Pictures/Tips.jpg" class="img-responsive" alt="Tips">
-      <a href="./Interview.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
+    <i class="glyphicon glyphicon-check"></i> A portfolio or a GitHub link would help. <br>
 
-    <div class="col-sm-4">
-      <h3><b>Resume & Cover Letter Resources</b></h3>
-      <p>Need some resume or cover letter resources? We got you covered.</p>
-      <img src="./Pictures/Resume.jpg" class="img-responsive" alt="Resume_Resources">
-      <a href="./Resume.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
+    <i class="glyphicon glyphicon-check"></i> Consider adding in related coursework. <br>
+  </div>
+</div>
+
+<div class="container">
+  <h2><b>Cover Letter Tips</b></h2>
+  <a href="#demo2" class="btn btn-primary" data-toggle="collapse">Click to View</a>
+  <div id="demo2" class="collapse">
+    <i class="glyphicon glyphicon-check"></i>  Don't repeat your resume. <br>
+
+    <i class="glyphicon glyphicon-check"></i>  Think about what you can do for them. <br>
+
+    <i class="glyphicon glyphicon-check"></i>  Research the company before writing up a cover letter. <br>
 
   </div>
 </div>
+<br>
+<br>
+
 <footer>
       <div class="container">
         <div class="row">
@@ -183,6 +183,5 @@ a:hover {
         </div>
       </div>
 </footer>
-
 </body>
 </html>
