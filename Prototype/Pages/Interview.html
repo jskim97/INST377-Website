@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Interview Tips Page</title>
+  <title>Interview Resource Database</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -59,7 +59,7 @@
   -webkit-filter: blur(2px);
 
   /* Full height */
-  height: 70%; 
+  height: 70%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -92,7 +92,7 @@
 <div class="bg-image"></div>
 <div class="bg-text">
   <h1><p style="color:White;"><b>Interview Tips</b></p></h1>
-  <p>Our Personal List of Tips to Ace Your Next Interview</p>
+  <p>Our personal list of tips to ace your next interview!</p>
 </div>
 </div>
 
@@ -102,31 +102,41 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="./Home.html"> <p style="color:White;">Home </p></a></li>
-        <li><a href="./About.html"> <p style="color:White;">About </p></a></li>
-        <li><a href="./Contact.html"><p style="color:White;"> Contact Us</p></a></li>
-        <li class="dropdown, active">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;">Pages
+        <li><a href="./Home.html"><p style="color:White;">Home</p></a></li>
+        <li><a href="./About.html"><p style="color:White;">About</p></a></li>
+        <li><a href="./Careers.html"><p style="color:White;">Career and Internship Database</p></a></li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;"> Interview Resources
         <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="./Careers.html">Career & Internship Database</a></li>
-          <li><a href="./Interview.html">Interview Tips</a></li>
-          <li><a href="./Review.html">Resume/ Cover Letter Tips</a></li>
+         <ul class="dropdown-menu">
+          <li class="active"><a href="./Interview.html">Tips</a></li>
+          <li><a href="./InterviewDB.html">Interview Resource Database</a></li>
         </ul>
-        </li>
+      </li>
+
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;"> Resume and Cover Letter Resources
+        <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+          <li><a href="./Resume.html">Tips</a></li>
+          <li><a href="./ResumeDB.html">Resume and Cover Letter Resource Database</a></li>
+        </ul>
+      </li>
+
+      <li><a href="./Contact.html"><p style="color:White;">Contact Us</p></a></li>
       </ul>
     </div>
   </div>
 </nav>
-  
+
 
 <div class="container">
-  <h2><b>Before Interivew</b></h2>
+  <h2><b>Before Interview</b></h2>
   <a href="#demo" class="btn btn-danger" data-toggle="collapse">Click to View</a>
   <div id="demo" class="collapse">
       <i class="glyphicon glyphicon-check"></i> Do your homework. <br>
@@ -189,51 +199,21 @@
 </div>
 <br>
 <br>
-<div class="container">
-  <h2><b>Interview Tip Database</b></h2>
-  <p>Type in a Search Query to Filter Out Results (e.g. "50 Questions To Prepare For"):</p> 
 
-  <input id="myInput" type="text" placeholder="Search..">
-  <br><br>
-  <div class="panel panel-default">           
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Interview Tip</th>
-        <th>Website Link</th>
-      </tr>
-    </thead>
-    <tbody id ="myTable">
-      <tr>
-        <td>20 Tips For Great Job Interviews</td>
-        <td>https://www.experisjobs.us/exp_us/en/career-advice/20-tips-job-interviews.htm</td>
-      </tr>
-      <tr>
-        <td>7 Interview Tips That Will Help You Get Hired</td>
-        <td>https://www.thebalancecareers.com/top-interview-tips-2058577</td>
-      </tr>
-      <tr>
-        <td>Data Science Interview Guide</td>
-        <td>https://towardsdatascience.com/data-science-interview-guide-4ee9f5dc778</td>
-      </tr>
-
-      <tr>
-        <td>Coding Interview Tips</td>
-        <td>https://www.interviewcake.com/coding-interview-tips</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
 <footer>
       <div class="container">
         <div class="row">
-          <div class="span3">
+          <div class="span5">
             <div class="widget">
               <h5 class="widgetheading">Browse pages</h5>
               <ul class="link-list">
                 <li><a href="./Home.html">Home</a></li>
                 <li><a href="./About.html">About</a></li>
+                <li><a href="./Careers.html">Career & Internship Database</a></li>
+                <li><a href="./Interview.html">Interview Tips</a></li>
+                <li><a href="./InterviewDB.html">Interview Resources Database</a></li>
+                <li><a href="./Resume.html">Resume and Cover Letter Tips</a></li>
+                <li><a href="./ResumeDB.html">Resume and Cover Letter Resources Database</a></li>
                 <li><a href="./Contact.html">Contact Us</a></li>
               </ul>
             </div>

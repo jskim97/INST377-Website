@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home Page</title>
+  <title>Interview Tips </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,12 +15,31 @@
   <link href="./css/jcarousel.css" rel="stylesheet" />
   <link href="./css/flexslider.css" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
-
+  <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
   <style>
-  img {
-    width: 400px; /* You can set the dimensions to whatever you want */
-    height: 400px;
-    object-fit: cover;
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 
   body, html {
@@ -33,7 +52,7 @@
 
 .bg-image {
   /* The image used */
-  background-image: url("./Pictures/GettingAJob.jpg");
+  background-image: url("./Pictures/Interviewing.jpg");
 
   /* Add the blur effect */
   filter: blur(2px);
@@ -65,28 +84,17 @@
   padding: 20px;
   text-align: center;
 }
-
-.btn-space {
-  margin: 15px auto 0 auto;
-  display: block;
-}
-
-a:hover {
- text-decoration: none;
-}
-
   </style>
-
 </head>
 <body>
 
+
 <div class="bg-image"></div>
 <div class="bg-text">
-  <h2><p style="color:White;"><b>Tech Career Development Resources</b></p></h2>
-  <p>For current undergraduates and recent graduates</p>
+  <h1><p style="color:White;"><b>Interview Resources</b></p></h1>
+  <p>Our personal list of resources to help ace your next interview!</p>
 </div>
 </div>
-
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -96,10 +104,10 @@ a:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./Home.html"><p style="color:White;">Home</p></a></li>
+        <li><a href="./Home.html"><p style="color:White;">Home</p></a></li>
         <li><a href="./About.html"><p style="color:White;">About</p></a></li>
         <li><a href="./Careers.html"><p style="color:White;">Career and Internship Database</p></a></li>
         <li class="dropdown">
@@ -107,7 +115,7 @@ a:hover {
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
           <li><a href="./Interview.html">Tips</a></li>
-          <li><a href="./InterviewDB.html">Interview Resource Database</a></li>
+          <li class="active"><a href="./InterviewDB.html">Interview Resource Database</a></li>
         </ul>
       </li>
 
@@ -121,46 +129,46 @@ a:hover {
       </li>
 
       <li><a href="./Contact.html"><p style="color:White;">Contact Us</p></a></li>
-        <!-- <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;">Pages
-        <span class="caret"></span></a>
-         <ul class="dropdown-menu">
-          <li><a href="./Careers.html">Career & Internship Database</a></li>
-          <li><a href="./Interview.html">Interview Tips</a></li>
-          <li><a href="./Resume.html">Resume/ Cover Letter Tips</a></li>
-        </ul>
-      </li> -->
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3><b>Careers & Internships</b></h3>
-      <p>Tech Entry Level Positions and Internships from companies all over.</p>
+  <h2><b>Interview Resource Database</b></h2>
+  <p><b>Type in the search bar to filter out results (e.g. "50 questions to prepare for"):</b></p>
 
-      <img src="./Pictures/Careers&Internships.jpg" class="img-responsive" alt="Careers_&_Internships">
-      <!-- <a class="btn btn-outline-primary btn-space" href="./Careers.html" role="button">
-      Click here!! </a> -->
-        <a href="./Careers.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
-    <div class="col-sm-4">
-      <h3><b>Interview Resources</b></h3>
-      <p>Ace your next interview with these killer resources!</p>
-      <img src="./Pictures/Tips.jpg" class="img-responsive" alt="Tips">
-      <a href="./Interview.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
+  <input id="myInput" type="text" placeholder="Search..">
+  <br><br>
+  <div class="panel panel-default">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Website Link</th>
+      </tr>
+    </thead>
+    <tbody id ="myTable">
+      <tr>
+        <td>20 Tips For Great Job Interviews</td>
+        <td>https://www.experisjobs.us/exp_us/en/career-advice/20-tips-job-interviews.htm</td>
+      </tr>
+      <tr>
+        <td>7 Interview Tips That Will Help You Get Hired</td>
+        <td>https://www.thebalancecareers.com/top-interview-tips-2058577</td>
+      </tr>
+      <tr>
+        <td>Data Science Interview Guide</td>
+        <td>https://towardsdatascience.com/data-science-interview-guide-4ee9f5dc778</td>
+      </tr>
 
-    <div class="col-sm-4">
-      <h3><b>Resume & Cover Letter Resources</b></h3>
-      <p>Need some resume or cover letter resources? We got you covered.</p>
-      <img src="./Pictures/Resume.jpg" class="img-responsive" alt="Resume_Resources">
-      <a href="./Resume.html"><button type="button" class="btn btn-outline-primary btn-space">More Information >></button></a>
-    </div>
-
-  </div>
+      <tr>
+        <td>Coding Interview Tips</td>
+        <td>https://www.interviewcake.com/coding-interview-tips</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
 <footer>
       <div class="container">
@@ -183,6 +191,5 @@ a:hover {
         </div>
       </div>
 </footer>
-
 </body>
 </html>
