@@ -164,9 +164,9 @@
         {
           $result->data_seek($j);
           echo '<tr>';
-          echo '<td>' . $result->fetch_assoc()['Type_of_Job'] . '</td>';
+          echo '<td>' . $result->fetch_assoc()['Type_Of_Job'] . '</td>';
           $result->data_seek($j);
-          echo '<td> ' . $result->fetch_assoc()['Title_of_Job'] . '</td>';
+          echo '<td> ' . $result->fetch_assoc()['Title_Of_Job'] . '</td>';
           $result->data_seek($j);
           echo '<td>' . $result->fetch_assoc()['Location'] . '</td>';
           $result->data_seek($j);
