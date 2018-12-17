@@ -1,3 +1,8 @@
+ <?php  
+ $connect = mysqli_connect("localhost", "root", "st0rywr1ter", "newDb");  
+ $query ="SELECT Resources.Resource_Name, Links.Link FROM Resources INNER JOIN Links ON Resources.Links_Link_Id=Links.Link_Id;";  
+ $result = mysqli_query($connect, $query);  
+ ?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,23 +154,18 @@ body, html {
         <th>Website Link</th>
       </tr>
     </thead>
-    <tbody id ="myTable">
-      <tr>
-        <td>Database Administrator Sample Resume</td>
-        <td>https://resume-resource.com/before-after/ba-ex16.pdf</td>
-      </tr>
-      <tr>
-        <td>Internship Resume</td>
-        <td>https://resume-resource.com/pdf/exstu8.pdf</td>
-      </tr>
-      <tr>
-        <td>Tech Cover Letter</td>
-        <td>https://resume-resource.com/pdf/covexample1.pdf</td>
-      </tr>
-      <tr>
-        <td>Software Developer Resume and Career Letter Sample</td>
-        <td>https://www.thebalancecareers.com/software-developer-cover-letter-example-2060144</td>
-      </tr>
+    <tbody>
+      <?php  
+          while($row = mysqli_fetch_array($result))  
+          {  
+            echo '  
+                <tr>  
+                  <td>'.$row["Resouce_Name"].'</td> 
+                  <td>'.$row["Link"].'</td>    
+                </tr>  
+              ';  
+          }  
+      ?> 
     </tbody>
   </table>
 </div>
