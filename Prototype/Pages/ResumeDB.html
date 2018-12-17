@@ -150,21 +150,22 @@ body, html {
         <th>Website Link</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id ="myTable">
       <?php // query.php
-        require_once 'login.php';
         $conn = new mysqli("localhost", "root", "st0rywr1ter", "newDb");
         if ($conn->connect_error) die($conn->connect_error);
-          $query = "SELECT Resources.Resource_Name, Links.Link FROM Resources INNER JOIN Links ON Resources.Links_Link_Id=Links.Link_Id;";
+          $query = "SELECT `Resources`.Resource_Name, `Links`.Link FROM `Resources` INNER JOIN `Links` ON `Resources`.Links_Link_Id=`Links`.Link_Id;";
           $result = $conn->query($query);
         if (!$result) die($conn->error);
           $rows = $result->num_rows;
         for ($j = 0 ; $j < $rows ; ++$j)
         {
           $result->data_seek($j);
-          echo '<tr>' . $result->fetch_assoc()['Resouce_Name'] . '</tr>';
+          echo '<tr>';
+          echo '<td>' . $result->fetch_assoc()['Resouce_Name'] . '</td>';
           $result->data_seek($j);
-          echo '<tr> ' . $result->fetch_assoc()['Link'] . '</tr>';
+          echo '<td> ' . $result->fetch_assoc()['Link'] . '</td>';
+          echo '</tr>';
         }
         $result->close();
         $conn->close();

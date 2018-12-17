@@ -149,23 +149,25 @@
       </tr>
     </thead>
     <tbody id ="myTable">
-      <tr>
-        <td>20 Tips For Great Job Interviews</td>
-        <td>https://www.experisjobs.us/exp_us/en/career-advice/20-tips-job-interviews.htm</td>
-      </tr>
-      <tr>
-        <td>7 Interview Tips That Will Help You Get Hired</td>
-        <td>https://www.thebalancecareers.com/top-interview-tips-2058577</td>
-      </tr>
-      <tr>
-        <td>Data Science Interview Guide</td>
-        <td>https://towardsdatascience.com/data-science-interview-guide-4ee9f5dc778</td>
-      </tr>
-
-      <tr>
-        <td>Coding Interview Tips</td>
-        <td>https://www.interviewcake.com/coding-interview-tips</td>
-      </tr>
+      <?php // query.php
+        $conn = new mysqli("localhost", "root", "st0rywr1ter", "newDb");
+        if ($conn->connect_error) die($conn->connect_error);
+          $query = "SELECT `Resources`.Resource_Name, `Links`.Link FROM `Resources` INNER JOIN `Links` ON `Resources`.Links_Link_Id=`Links`.Link_Id;";
+          $result = $conn->query($query);
+        if (!$result) die($conn->error);
+          $rows = $result->num_rows;
+        for ($j = 0 ; $j < $rows ; ++$j)
+        {
+          $result->data_seek($j);
+          echo '<tr>';
+          echo '<td>' . $result->fetch_assoc()['Resouce_Name'] . '</td>';
+          $result->data_seek($j);
+          echo '<td> ' . $result->fetch_assoc()['Link'] . '</td>';
+          echo '</tr>';
+        }
+        $result->close();
+        $conn->close();
+      ?> 
     </tbody>
   </table>
 </div>
