@@ -110,13 +110,13 @@
       <ul class="nav navbar-nav">
         <li><a href="./Home.html"><p style="color:White;">Home</p></a></li>
         <li><a href="./About.html"><p style="color:White;">About</p></a></li>
-        <li class="active"><a href="./Careers.html"><p style="color:White;">Career and Internship Database</p></a></li>
+        <li class="active"><a href="./Careers.php"><p style="color:White;">Career and Internship Database</p></a></li>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:White;"> Interview Resources
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
           <li><a href="./Interview.html">Tips</a></li>
-          <li><a href="./InterviewDB.html">Interview Resource Database</a></li>
+          <li><a href="./InterviewDB.php">Interview Resource Database</a></li>
         </ul>
       </li>
 
@@ -125,7 +125,7 @@
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
           <li><a href="./Resume.html">Tips</a></li>
-          <li><a href="./ResumeDB.html">Resume and Cover Letter Resource Database</a></li>
+          <li><a href="./ResumeDB.php">Resume and Cover Letter Resource Database</a></li>
         </ul>
       </li>
 
@@ -156,7 +156,7 @@
        <?php // query.php
         $conn = new mysqli("localhost", "root", "st0rywr1ter", "newDb");
         if ($conn->connect_error) die($conn->connect_error);
-          $query = "SELECT * FROM 'Company_Listings';";
+          $query = "SELECT * FROM `Company_Listings`;";
           $result = $conn->query($query);
         if (!$result) die($conn->error);
           $rows = $result->num_rows;
@@ -190,11 +190,11 @@
               <ul class="link-list">
                 <li><a href="./Home.html">Home</a></li>
                 <li><a href="./About.html">About</a></li>
-                <li><a href="./Careers.html">Career & Internship Database</a></li>
+                <li><a href="./Careers.php">Career & Internship Database</a></li>
                 <li><a href="./Interview.html">Interview Tips</a></li>
-                <li><a href="./InterviewDB.html">Interview Resources Database</a></li>
+                <li><a href="./InterviewDB.php">Interview Resources Database</a></li>
                 <li><a href="./Resume.html">Resume and Cover Letter Tips</a></li>
-                <li><a href="./ResumeDB.html">Resume and Cover Letter Resources Database</a></li>
+                <li><a href="./ResumeDB.php">Resume and Cover Letter Resources Database</a></li>
                 <li><a href="./Contact.html">Contact Us</a></li>
               </ul>
             </div>
