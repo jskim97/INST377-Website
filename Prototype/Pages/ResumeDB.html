@@ -1,8 +1,4 @@
- <?php  
- $connect = mysqli_connect("localhost", "root", "st0rywr1ter", "newDb");  
- $query ="SELECT Resources.Resource_Name, Links.Link FROM Resources INNER JOIN Links ON Resources.Links_Link_Id=Links.Link_Id;";  
- $result = mysqli_query($connect, $query);  
- ?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,16 +151,23 @@ body, html {
       </tr>
     </thead>
     <tbody>
-      <?php  
-          while($row = mysqli_fetch_array($result))  
-          {  
-            echo '  
-                <tr>  
-                  <td>'.$row["Resouce_Name"].'</td> 
-                  <td>'.$row["Link"].'</td>    
-                </tr>  
-              ';  
-          }  
+      <?php // query.php
+        require_once 'login.php';
+        $conn = new mysqli("localhost", "root", "st0rywr1ter", "newDb");
+        if ($conn->connect_error) die($conn->connect_error);
+          $query = "SELECT Resources.Resource_Name, Links.Link FROM Resources INNER JOIN Links ON Resources.Links_Link_Id=Links.Link_Id;";
+          $result = $conn->query($query);
+        if (!$result) die($conn->error);
+          $rows = $result->num_rows;
+        for ($j = 0 ; $j < $rows ; ++$j)
+        {
+          $result->data_seek($j);
+          echo '<tr>' . $result->fetch_assoc()['Resouce_Name'] . '</tr>';
+          $result->data_seek($j);
+          echo '<tr> ' . $result->fetch_assoc()['Link'] . '</tr>';
+        }
+        $result->close();
+        $conn->close();
       ?> 
     </tbody>
   </table>
